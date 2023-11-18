@@ -35,11 +35,22 @@
   min-height: 100%;
   display: flex;
   flex-direction: column;
+  padding-left: 7px;
 }
 
 .action_div {
   width: 50%;
-  height: 100px;
+  height: 100%;
   display: flex;
   justify-content: flex-end;
+}
+
+.action_div > * {
+  margin-right: 15px;
+  cursor: pointer;
+  transition: 150ms ease-in-out;
+}
+
+.action_div > *:hover {
+  scale: 1.1;
 }

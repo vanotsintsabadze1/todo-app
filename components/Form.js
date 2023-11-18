@@ -42,7 +42,7 @@ export default function Form() {
           add
         </button>
       </section>
-      <Tasks tasks={tasks} />
+      <Tasks tasks={tasks} setTasks={setTasks} />
     </>
   );
 }
