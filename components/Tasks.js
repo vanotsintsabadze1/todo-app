@@ -1,41 +1,29 @@
 import "@/styles/tasks.css";
-import Image from "next/image";
-import { FaTrash, FaEdit } from "react-icons/fa";
-import { IconContext } from "react-icons";
 import { useState } from "react";
+import Task from "./Task";
+import ActionBar from "./ActionBar";
 
 export default function Tasks(props) {
-  const [isEditable, setEditable] = useState(false);
   const { tasks, setTasks } = props;
+  const [editable, setEditable] = useState(false);
   return (
     <>
       <div className="tasks_container">
-        {tasks.map((t, i) => (
-          <div className="task_div" key={i}>
-            <section className="text_div">
-              <h3 contentEditable={isEditable}>{t[0]}</h3>
-              <p contentEditable={isEditable}>{t[1]}</p>
-            </section>
-            <IconContext.Provider value={{ size: "15px" }}>
-              <section className="action_div">
-                <FaTrash
-                  value={{}}
-                  onClick={() => {
-                    setTasks((prev) => {
-                      return tasks.filter((p, ind) => ind !== i);
-                    });
-                    setEditable((prev) => !prev);
-                  }}
+        {tasks.map((t, i) => {
+          return (
+            <>
+              <div className="task_div" key={i}>
+                <Task name={t[0]} desc={t[1]} editValue={editable} />
+                <ActionBar
+                  elementIndex={i}
+                  setTaskFunction={setTasks}
+                  editValueFunction={setEditable}
+                  tasks={tasks}
                 />
-                <FaEdit
-                  onClick={() => {
-                    setEditable((prev) => !prev);
-                  }}
-                />
-              </section>
-            </IconContext.Provider>
-          </div>
-        ))}
+              </div>
+            </>
+          );
+        })}
       </div>
     </>
   );
