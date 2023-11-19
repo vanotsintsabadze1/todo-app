@@ -20,17 +20,22 @@
   -moz-box-shadow: 1px 9px 18px -4px rgba(0, 0, 0, 0.75);
 }
 
-.task_div h3 {
+.task_name {
   font-size: 18px;
   width: 250px;
   font-weight: bold;
   overflow-wrap: break-word;
 }
 
-.task_div p {
-  font-size: 11px;
+.description {
+  font-size: 12px;
+}
+
+.description_p {
+  font-size: 10px;
   width: 200px;
   overflow-wrap: break-word;
+  margin-top: 2px;
 }
 
 .text_div {

@@ -1,21 +1,34 @@
 import { FaTrash, FaEdit } from "react-icons/fa";
 import { IconContext } from "react-icons";
+import { useState } from "react";
 
 export default function ActionBar(props) {
-  const { setTaskFunction, elementIndex, editValueFunction, tasks } = props;
-  let i = elementIndex;
+  const { stFunction, elIndex, tasks, g } = props;
+  const [isOn, setToggle] = useState("black");
+
+  const editButton = () => {
+    if (isOn === "black") {
+      setToggle("green");
+    } else {
+      setToggle("black");
+    }
+    g((prev) => !prev);
+  };
+
   return (
     <>
       <IconContext.Provider value={{ size: "15px" }}>
         <section className="action_div">
           <FaTrash
             onClick={() => {
-              setTaskFunction((prev) => {
-                return tasks.filter((p, ind) => ind !== i);
+              stFunction((prev) => {
+                return tasks.filter((p, ind) => ind !== elIndex);
               });
             }}
           />
-          <FaEdit onClick={() => editValueFunction((prev) => !prev)} />
+          <IconContext.Provider value={{ color: isOn }}>
+            <FaEdit onClick={editButton} />
+          </IconContext.Provider>
         </section>
       </IconContext.Provider>
     </>
