@@ -44,3 +44,38 @@
   border-radius: 20px;
   margin-top: 10px;
 }
+
+@media (max-width: 428px) {
+  .wrapper {
+    width: 80%;
+    height: 180px;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 50px;
+  }
+  .information_wrapper {
+    width: 100%;
+  }
+
+  .button {
+    margin-top: -5px;
+  }
+}
+
+@media (max-width: 390px) {
+  .wrapper {
+    width: 90%;
+  }
+
+  .information_field {
+    width: 95%;
+  }
+
+  .information_field::placeholder {
+    font-size: 11.5px;
+  }
+
+  .button {
+    margin-right: 20px;
+  }
+}

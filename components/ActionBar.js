@@ -1,6 +1,6 @@
 import { FaTrash, FaEdit } from "react-icons/fa";
 import { IconContext } from "react-icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function ActionBar(props) {
   const { stFunction, elIndex, tasks, g } = props;

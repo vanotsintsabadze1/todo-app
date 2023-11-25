@@ -62,3 +62,13 @@
 .action_div > *:hover {
   scale: 1.1;
 }
+
+@media (max-width: 428px) {
+  .tasks_container {
+    width: 85%;
+  }
+
+  .task_div {
+    width: 350px;
+  }
+}

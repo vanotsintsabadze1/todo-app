@@ -12,7 +12,7 @@ export default function Task(props) {
           {name}
         </h3>
         <p className="description">Description:</p>
-        <p className="description_p">
+        <p className="description_p" contentEditable={editable}>
           {desc == "" ? "No description available" : desc}
         </p>
       </section>
